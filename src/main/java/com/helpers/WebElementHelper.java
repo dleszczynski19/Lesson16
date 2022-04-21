@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 public class WebElementHelper extends BasePage {
     private static Logger log = LoggerFactory.getLogger(WebElementHelper.class);
@@ -30,6 +31,10 @@ public class WebElementHelper extends BasePage {
         } catch (TimeoutException toe) {
             log.error("Element " + element.toString() + " was not clickable after 10 seconds");
         }
+    }
+
+    public void clickRandomElement(List<WebElement> list) {
+        clickOnElement(list.get(new Random().nextInt(list.size() - 1)));
     }
 
     public void sendKeysToElement(WebElement element, String value) {

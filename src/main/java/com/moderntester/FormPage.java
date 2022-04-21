@@ -100,19 +100,19 @@ public class FormPage extends WebElementHelper {
     }
 
     public FormPage fillFirstName(String name) {
-        firstNameInput.sendKeys(name);
+        sendKeysToElement(firstNameInput, name);
         log.info("First name input filled");
         return this;
     }
 
     public FormPage fillLastName(String lastName) {
-        lastNameInput.sendKeys(lastName);
+        sendKeysToElement(lastNameInput, lastName);
         log.info("Last name input filled");
         return this;
     }
 
     public FormPage fillEmail(String email) {
-        emailInput.sendKeys(email);
+        sendKeysToElement(emailInput, email);
         log.info("Email input filled");
         return this;
     }
@@ -120,13 +120,13 @@ public class FormPage extends WebElementHelper {
     public FormPage chooseSex(Sex sex) {
         switch (sex) {
             case MALE:
-                maleRadio.click();
+                clickOnElement(maleRadio);
                 break;
             case FEMALE:
-                femaleRadio.click();
+                clickOnElement(femaleRadio);
                 break;
             case OTHER:
-                otherRadio.click();
+                clickOnElement(otherRadio);
                 break;
         }
         log.info("Sex chosen");
@@ -134,20 +134,19 @@ public class FormPage extends WebElementHelper {
     }
 
     public FormPage chooseRandomSex() {
-        clickRandomElement(sexListRadio).click();
+        clickRandomElement(sexListRadio);
         log.info("Random sex chosen");
         return this;
     }
 
     public FormPage fillAge(int age) {
-        ageInput.clear();
-        ageInput.sendKeys(String.valueOf(age));
+        sendKeysToElement(ageInput, String.valueOf(age));
         log.info("Age input filled");
         return this;
     }
 
     public FormPage chooseRandomExperience() {
-        clickRandomElement(experienceListRadio).click();
+        clickRandomElement(experienceListRadio);
         log.info("Random experience chosen");
         return this;
     }
@@ -170,13 +169,13 @@ public class FormPage extends WebElementHelper {
     public FormPage chooseProfession(Profession profession) {
         switch (profession) {
             case MANUAL:
-                manualCheckbox.click();
+                clickOnElement(manualCheckbox);
                 break;
             case AUTOMATION:
-                automationCheckbox.click();
+                clickOnElement(automationCheckbox);
                 break;
             case OTHER:
-                otherCheckbox.click();
+                clickOnElement(otherCheckbox);
                 break;
         }
         log.info("Profession selected");
@@ -189,7 +188,7 @@ public class FormPage extends WebElementHelper {
     }
 
     public FormPage signIn() {
-        signInButton.click();
+        clickOnElement(signInButton);
         return this;
     }
 

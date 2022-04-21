@@ -48,10 +48,6 @@ public class BasePage {
         log.info("Screen shot taken");
     }
 
-    public WebElement clickRandomElement(List<WebElement> list) {
-        return list.get(new Random().nextInt(list.size()));
-    }
-
     public void selectRandomElement(Select selectList) {
         selectList.selectByIndex(new Random().nextInt(selectList.getOptions().size()));
     }
